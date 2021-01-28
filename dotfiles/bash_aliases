@@ -1,0 +1,78 @@
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls="ls --color=auto"
+    #alias dir="dir --color=auto"
+    #alias vdir="vdir --color=auto"
+
+    alias grep="grep --color=auto"
+    alias fgrep="fgrep --color=auto"
+    alias egrep="egrep --color=auto"
+fi
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Directories
+## cd
+alias cd..="cd .."
+alias ..="cd .."
+alias ..2="cd ../.."
+alias ..3="cd ../../.."
+alias ..4="cd ../../../.."
+## ls
+alias ll="ls -alF"
+alias la="ls -A"
+alias l="ls -CF"
+## mkdir
+alias mkdir="mkdir -pv"
+
+# Files
+## Confirmations
+alias cp="cp -riv"
+alias ln="ln -iv"
+alias mv="mv -iv"
+## Editors
+alias nano="nano -c"
+## Safety nets
+alias chgrp="chgrp --preserve-root"
+alias chmod="chmod --preserve-root"
+alias chown="chown --preserve-root"
+alias rm="rm -I --preserve-root"
+
+# Internet
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias nmap="sudo -E nmap"
+alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+alias wget="wget -c"
+## ping
+alias ping="ping -c 5"
+alias fastping="ping -c 100 -s 2"
+
+# System
+alias halt="sudo /sbin/halt"
+alias please='sudo "$BASH" -c "$(history -p !!)"'
+alias poweroff="sudo /sbin/poweroff"
+alias reboot="sudo /sbin/reboot"
+alias shutdown="sudo /sbin/shutdown"
+## Status
+### CPU
+alias cpuinfo="lscpu"
+alias pscpu="ps auxf | sort -nr -k 3"
+alias pscpu10="ps auxf | sort -nr -k 3 | head -10"
+### Memory
+alias df="df -H"
+alias du="du -ch"
+alias du1="du --max-depth=1 | sort -h"
+alias du2="du --max-depth=2 | sort -h"
+alias meminfo="free -m -l -t"
+alias psmem="ps auxf | sort -nr -k 4"
+alias psmem10="ps auxf | sort -nr -k 4 | head -10"
+## Updating
+alias u="sudo apt update"
+alias uu="u && sudo apt upgrade -y"
+alias uua="uu && sudo apt autoremove -y"
+
+# Time
+alias now="date +'%T'"
+alias nowdate="date +'%d-%m-%Y'"
