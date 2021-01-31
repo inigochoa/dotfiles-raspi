@@ -11,7 +11,7 @@
     ~/.bash_logout: ~
     ~/.bash_aliases: ~
     ~/.gitconfig: ~
-    ~/.scripts: scripts/~
+    ~/.scripts/status.sh: scripts/status.sh
 
 - shell:
     - . $HOME/.bashrc
