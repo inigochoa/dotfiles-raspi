@@ -11,6 +11,7 @@
     ~/.bash_logout: ~
     ~/.bash_aliases: ~
     ~/.gitconfig: ~
+    ~/.scripts/on_boot.sh: scripts/on_boot.sh
     ~/.scripts/status.sh: scripts/status.sh
 
 - shell:
