@@ -59,6 +59,7 @@ alias temp="/opt/vc/bin/vcgencmd measure_temp"
 ## Status
 ### CPU
 alias cpuinfo="lscpu"
+alias cputemp="$(((cat /sys/class/thermal/thermal_zone0/temp)/1000))'Cº"
 alias pscpu="ps auxf | sort -nr -k 3"
 alias pscpu10="ps auxf | sort -nr -k 3 | head -10"
 ### Memory
